@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.chat.VentanaClienteController">
+   <children>
+      <TabPane prefHeight="514.0" prefWidth="671.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="CARGOS" text="Cargos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="516.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6435045317220544" layoutX="8.0" layoutY="8.0" prefHeight="476.0" prefWidth="664.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="TABLACARGOS" layoutY="7.0" onMouseClicked="#SeleccionCargo" prefHeight="469.0" prefWidth="422.0">
+                                      <columns>
+                                        <TableColumn fx:id="id_cargos" prefWidth="50.0" text="ID" />
+                                        <TableColumn fx:id="nombre_cargo" prefWidth="90.0" text="NOMBRE" />
+                                          <TableColumn fx:id="min_cargo" prefWidth="150.0" text="SUELDO MINIMO" />
+                                          <TableColumn fx:id="max_cargo" prefWidth="150.0" text="SUELDO MAXIMO" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="CARGO_ID:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="14.0" layoutY="56.0" text="CARGO_NOMBRE:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="cargo_id_textfield" editable="false" layoutX="11.0" layoutY="31.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="cargo_nombre_textfield" layoutX="11.0" layoutY="73.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_cargo_insert" layoutX="11.0" layoutY="375.0" mnemonicParsing="false" onAction="#Insertar" prefHeight="25.0" prefWidth="213.0" text="INSERTAR" />
+                                    <Button fx:id="Boton_cargo_delete" layoutX="10.0" layoutY="442.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="25.0" prefWidth="213.0" text="ELIMINAR" />
+                                    <Button fx:id="Boton_cargo_update" layoutX="10.0" layoutY="409.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="25.0" prefWidth="213.0" text="ACTUALIZAR" />
+                                    <TextField fx:id="cargo_sueldoMax_textfield" layoutX="14.0" layoutY="157.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="cargo_sueldoMin_textfield" layoutX="14.0" layoutY="115.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="17.0" layoutY="140.0" text="SUELDO_MAXIMO" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="17.0" layoutY="98.0" text="SUELDO_MINIMO" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="CIUDADES" text="Ciudades">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6435045317220544" prefHeight="485.0" prefWidth="664.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="TABLACIUDADES" layoutY="7.0" onMouseClicked="#SeleccionCiudades" prefHeight="479.0" prefWidth="422.0">
+                                       <columns>
+                                          <TableColumn fx:id="id_ciudad" prefWidth="50.0" text="ID" />
+                                          <TableColumn fx:id="nombre_ciudad" prefWidth="90.0" text="NOMBRE" />
+                                          <TableColumn fx:id="id_pais_ciudad" prefWidth="150.0" text="PAIS ID" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="17.0" layoutY="14.0" text="CIUDAD_ID:" />
+                                    <Label layoutX="17.0" layoutY="65.0" text="CIUDAD_NOMBRE:" />
+                                    <TextField fx:id="ciudad_id_textfield" editable="false" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="212.0" />
+                                    <TextField fx:id="ciudad_nombre_textfield" layoutX="14.0" layoutY="82.0" prefHeight="25.0" prefWidth="212.0" />
+                                    <Button fx:id="Boton_ciudad_insert" layoutX="11.0" layoutY="380.0" mnemonicParsing="false" onAction="#Insertar" prefHeight="25.0" prefWidth="213.0" text="INSERTAR" />
+                                    <Button fx:id="Boton_ciudad_delete" layoutX="10.0" layoutY="447.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="25.0" prefWidth="213.0" text="ELIMINAR" />
+                                    <Button fx:id="Boton_ciudad_update" layoutX="10.0" layoutY="414.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="25.0" prefWidth="213.0" text="ACTUALIZAR" />
+                                    <TextField fx:id="ciudad_pais_id" layoutX="14.0" layoutY="133.0" prefHeight="25.0" prefWidth="212.0" />
+                                    <Label layoutX="17.0" layoutY="116.0" text="PAIS_ID" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="DEPARTAMENTOS" text="Departamentos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6435045317220544" prefHeight="484.0" prefWidth="664.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="TABLADEPARTAMENTOS" layoutY="7.0" onMouseClicked="#actualizarDept" prefHeight="478.0" prefWidth="422.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="id_dept" prefWidth="50.0" text="ID" />
+                                          <TableColumn fx:id="nombre_dept" prefWidth="90.0" text="NOMBRE" />
+                                          <TableColumn fx:id="id_localizacion_dept" prefWidth="150.0" text="LOCALIZACION ID" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="CARGO_ID:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="14.0" layoutY="65.0" text="NOMBRE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="dept_id_textfield" editable="false" layoutX="11.0" layoutY="31.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="dept_nombre_textfield" layoutX="11.0" layoutY="82.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_dept_insert" layoutX="11.0" layoutY="380.0" mnemonicParsing="false" onAction="#Insertar" prefHeight="25.0" prefWidth="213.0" text="INSERTAR" />
+                                    <Button fx:id="Boton_dept_delete" layoutX="10.0" layoutY="447.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="25.0" prefWidth="213.0" text="ELIMINAR" />
+                                    <Button fx:id="Boton_dept_update" layoutX="10.0" layoutY="414.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="25.0" prefWidth="213.0" text="ACTUALIZAR" />
+                                    <TextField fx:id="dept_localiz_id_textfield" layoutX="12.0" layoutY="132.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="15.0" layoutY="115.0" text="LOCALIZACION ID" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="EMPLEADOS" text="Empleados">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="671.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6435045317220544" prefHeight="485.0" prefWidth="664.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ScrollPane prefHeight="485.0" prefWidth="425.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="900.0">
+                                             <children>
+                                                <TableView fx:id="TABLAEMPLEADOS" onMouseClicked="#SeleccionEmpleados" prefHeight="477.0" prefWidth="900.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="id_empleado" prefWidth="50.0" text="ID" />
+                                                      <TableColumn fx:id="nombre_empleado" prefWidth="100.0" text="NOMBRE" />
+                                                      <TableColumn fx:id="apellido_empleado" prefWidth="100.0" text="APELLIDO" />
+                                                      <TableColumn fx:id="email_empleado" prefWidth="100.0" text="EMAIL" />
+                                                      <TableColumn fx:id="fecha_empleado" prefWidth="100.0" text="NACIMIENTO" />
+                                                      <TableColumn fx:id="sueldo_empleado" prefWidth="100.0" text="SUELDO" />
+                                                      <TableColumn fx:id="comision_empleado" prefWidth="100.0" text="COMISION" />
+                                                      <TableColumn fx:id="cargo_empleado" prefWidth="100.0" text="CARGO" />
+                                                      <TableColumn fx:id="dept_empleado" prefWidth="100.0" text="DEPARTAMENTO" />
+                                                   </columns>
+                                                </TableView>
+                                             </children></AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="483.0" prefWidth="220.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="4.0" text="EMPLEADO_ID:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="14.0" layoutY="46.0" text="NOMBRE:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_id_textfield" editable="false" layoutX="11.0" layoutY="21.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_nombre_textfield" layoutX="11.0" layoutY="63.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_emp_insert" layoutX="10.0" layoutY="387.0" mnemonicParsing="false" onAction="#Insertar" prefHeight="25.0" prefWidth="213.0" text="INSERTAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_emp_delete" layoutX="12.0" layoutY="456.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="25.0" prefWidth="213.0" text="ELIMINAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_emp_update" layoutX="117.0" layoutY="421.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="25.0" prefWidth="213.0" text="ACTUALIZAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_fecha_textfield" layoutX="13.0" layoutY="189.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_email_textfield" layoutX="13.0" layoutY="147.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="16.0" layoutY="172.0" text="FECHA DE NACIMIENTO" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="16.0" layoutY="130.0" text="EMAIL" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="19.0" layoutY="214.0" text="SUELDO" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="10.0" layoutY="294.0" text="CARGO" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_sueldo_textfield" layoutX="16.0" layoutY="231.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_cargo_textfield" layoutX="10.0" layoutY="311.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_apellido_textfield" layoutX="11.0" layoutY="105.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="14.0" layoutY="88.0" text="APELLIDO" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_comision_textfield" layoutX="16.0" layoutY="271.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="19.0" layoutY="254.0" text="COMISION" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="10.0" layoutY="336.0" text="DEPARTAMENTO" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="empleado_dept_textfield" layoutX="10.0" layoutY="353.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="LOCACIZACIONES" text="Localizaciones">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6435045317220544" prefHeight="486.0" prefWidth="664.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ScrollPane prefHeight="371.0" prefWidth="425.0" />
+                                    <TableView fx:id="TABLALOCALIZACIONES" layoutY="7.0" onMouseClicked="#actualizarLocaliz" prefHeight="480.0" prefWidth="422.0">
+                                       <columns>
+                                          <TableColumn fx:id="id_localizacion" prefWidth="50.0" text="ID" />
+                                          <TableColumn fx:id="nombre_localizacion" prefWidth="90.0" text="NOMBRE" />
+                                          <TableColumn fx:id="id_ciudad_localizacion" prefWidth="150.0" text="CIUDAD ID" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="LOCALIZACIÓN_ID:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="14.0" layoutY="65.0" text="DIRECCIÓN" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="localizacion_id_textfield" editable="false" layoutX="11.0" layoutY="31.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="localizacion_nombre_textfield" layoutX="11.0" layoutY="82.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_localiz_insert" layoutX="11.0" layoutY="380.0" mnemonicParsing="false" onAction="#Insertar" prefHeight="25.0" prefWidth="213.0" text="INSERTAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_localiz_delete" layoutX="10.0" layoutY="447.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="25.0" prefWidth="213.0" text="ELIMINAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_localiz_update" layoutX="10.0" layoutY="414.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="25.0" prefWidth="213.0" text="ACTUALIZAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="localizacion_ciudad_textfield" layoutX="14.0" layoutY="133.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="17.0" layoutY="116.0" text="CIUDAD_ID" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="PAISES" text="Paises">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6435045317220544" prefHeight="485.0" prefWidth="664.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="TABLAPAISES" layoutY="7.0" onMouseClicked="#actualizarPais" prefHeight="478.0" prefWidth="422.0">
+                                       <columns>
+                                          <TableColumn fx:id="id_pais" prefWidth="50.0" text="ID" />
+                                          <TableColumn fx:id="nombre_pais" prefWidth="90.0" text="NOMBRE" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="PAIS_ID:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Label layoutX="14.0" layoutY="65.0" text="PAIS_NOMBRE:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="pais_id_textfield" editable="false" layoutX="11.0" layoutY="31.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <TextField fx:id="pais_nombre_textfield" layoutX="11.0" layoutY="82.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_pais_insert" layoutX="11.0" layoutY="380.0" mnemonicParsing="false" onAction="#Insertar" prefHeight="25.0" prefWidth="213.0" text="INSERTAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_pais_delete" layoutX="10.0" layoutY="447.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="25.0" prefWidth="213.0" text="ELIMINAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="Boton_pais_update" layoutX="10.0" layoutY="414.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="25.0" prefWidth="213.0" text="ACTUALIZAR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="HISTORICOEMPLEADOS" text="HISTORICO EMPLEADOS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="671.0">
+                     <children>
+                        <ScrollPane prefHeight="485.0" prefWidth="671.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="226.0" prefWidth="829.0">
+                                 <children>
+                                    <TableView fx:id="TABLAEMPLEADOS1" layoutY="6.0" prefHeight="477.0" prefWidth="900.0">
+                                       <columns>
+                                          <TableColumn fx:id="id_empleado1" prefWidth="50.0" text="ID" />
+                                          <TableColumn fx:id="nombre_empleado1" prefWidth="100.0" text="NOMBRE" />
+                                          <TableColumn fx:id="apellido_empleado1" prefWidth="100.0" text="APELLIDO" />
+                                          <TableColumn fx:id="email_empleado1" prefWidth="100.0" text="EMAIL" />
+                                          <TableColumn fx:id="fecha_empleado1" prefWidth="100.0" text="NACIMIENTO" />
+                                          <TableColumn fx:id="sueldo_empleado1" prefWidth="100.0" text="SUELDO" />
+                                          <TableColumn fx:id="comision_empleado1" prefWidth="100.0" text="COMISION" />
+                                          <TableColumn fx:id="cargo_empleado1" prefWidth="100.0" text="CARGO" />
+                                          <TableColumn fx:id="dept_empleado1" prefWidth="100.0" text="DEPARTAMENTO" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
